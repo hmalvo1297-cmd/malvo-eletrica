@@ -1,1 +1,1776 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malvo Elétrica — Iluminação & Automação | Rio de Janeiro</title>
+  <meta name="description" content="Especialista em instalações de iluminação residencial de alto padrão e fino acabamento na Barra da Tijuca, Recreio, Zona Sul e São Conrado. Henrique Malvo.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0B0B0B;
+      --bg-card: #141414;
+      --gold-primary: #C6A15B;
+      --gold-hover: #DFB86C;
+      --gold-light: rgba(198, 161, 91, 0.15);
+      --text-main: #FFFFFF;
+      --text-muted: #A0A0A0;
+      --border-gold: rgba(198, 161, 91, 0.3);
+      --font-title: 'Cinzel', serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-title);
+      letter-spacing: 1px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-gold {
+      background-color: var(--gold-primary);
+      color: #000;
+      border-color: var(--gold-primary);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(198, 161, 91, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold-primary);
+      border-color: var(--gold-primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold-light);
+      color: #fff;
+    }
+
+    .btn-danger {
+      background-color: #8b0000;
+      color: #fff;
+      border-color: #a50000;
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.75rem;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(11, 11, 11, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(198, 161, 91, 0.2);
+      padding: 15px 5%;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: var(--font-title);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo span {
+      color: var(--gold-primary);
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      font-family: var(--font-body);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-primary);
+    }
+
+    .admin-lock {
+      color: var(--gold-primary);
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-left: 15px;
+      padding: 8px;
+      border: 1px solid var(--border-gold);
+      border-radius: 4px;
+      background: transparent;
+      transition: all 0.3s;
+    }
+
+    .admin-lock:hover {
+      background: var(--gold-light);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 120px 5% 60px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: background-image 0.4s ease, background-position 0.4s ease;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to right, rgba(11,11,11,0.92) 0%, rgba(11,11,11,0.7) 60%, rgba(11,11,11,0.5) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+    }
+
+    .hero-badge {
+      color: var(--gold-primary);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* SECTIONS & PORTFOLIO */
+    .section {
+      padding: 90px 5%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--gold-primary);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      padding: 40px;
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .about-info p {
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    .portfolio-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .category-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 8px;
+      overflow: hidden;
+      padding: 30px;
+    }
+
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .category-header-info h3 {
+      font-size: 1.8rem;
+      color: var(--gold-primary);
+      margin-bottom: 8px;
+    }
+
+    .category-header-info p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 800px;
+    }
+
+    /* CARROSSEL HORIZONTAL DESLIZANTE */
+    .carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .carousel-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 10px;
+      width: 100%;
+    }
+
+    .carousel-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-item {
+      flex: 0 0 340px;
+      height: 250px;
+      scroll-snap-align: start;
+      position: relative;
+      background: #000;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item {
+        flex: 0 0 78%;
+        height: 220px;
+      }
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .carousel-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .carousel-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .carousel-item:hover .carousel-item-overlay {
+      opacity: 1;
+    }
+
+    .carousel-item-overlay i {
+      color: var(--gold-primary);
+      font-size: 1.5rem;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(11, 11, 11, 0.85);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-primary);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .carousel-btn:hover {
+      background: var(--gold-primary);
+      color: #000;
+    }
+
+    .carousel-btn-prev { left: -22px; }
+    .carousel-btn-next { right: -22px; }
+
+    @media (max-width: 900px) {
+      .carousel-btn { display: none; }
+    }
+
+    /* DEPOIMENTOS CARROSSEL */
+    .testimonials-carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonials-container {
+      display: flex;
+      gap: 25px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding-bottom: 10px;
+      width: 100%;
+    }
+
+    .testimonials-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonial-card {
+      flex: 0 0 380px;
+      scroll-snap-align: start;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      padding: 35px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-card {
+        flex: 0 0 88%;
+      }
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--gold-primary);
+    }
+
+    .testimonial-stars {
+      color: var(--gold-primary);
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    /* SERVICES & AUTOMATION */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-5px);
+    }
+
+    .service-card i {
+      font-size: 2rem;
+      color: var(--gold-primary);
+      margin-bottom: 20px;
+    }
+
+    .automation-box {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid var(--gold-primary);
+      padding: 80px 40px;
+      border-radius: 8px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .automation-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(11,11,11,0.82) 100%);
+      z-index: 1;
+    }
+
+    .automation-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .automation-content h2 {
+      color: var(--text-main);
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .automation-content p {
+      color: #E2E2E2;
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+      line-height: 1.7;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+
+    footer {
+      background: #050505;
+      border-top: 1px solid rgba(198,161,91,0.2);
+      padding: 50px 5% 30px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* LIGHTBOX */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 3000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 85vh;
+      border: 1px solid var(--gold-primary);
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    /* ADMIN MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.92);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+    }
+
+    .modal-content-admin {
+      background: var(--bg-card);
+      border: 1px solid var(--gold-primary);
+      padding: 25px;
+      border-radius: 8px;
+      max-width: 950px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      color: var(--text-main);
+    }
+
+    .admin-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 10px;
+      overflow-x: auto;
+    }
+
+    .admin-tab {
+      padding: 8px 16px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-muted);
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .admin-tab.active {
+      background: var(--gold-primary);
+      color: #000;
+      font-weight: 600;
+      border-color: var(--gold-primary);
+    }
+
+    .admin-section {
+      display: none;
+    }
+
+    .admin-section.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold-primary);
+      font-size: 0.85rem;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+
+    .preview-box {
+      width: 100%;
+      max-height: 250px;
+      border: 1px dashed var(--border-gold);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+
+    .preview-box img {
+      max-width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+    }
+
+    .admin-gallery-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .admin-gallery-card {
+      position: relative;
+      aspect-ratio: 1;
+      background: #000;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.1);
+      overflow: hidden;
+    }
+
+    .admin-gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .admin-gallery-card-controls {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .admin-gallery-card:hover .admin-gallery-card-controls {
+      opacity: 1;
+    }
+
+    .status-msg {
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 0.85rem;
+      display: none;
+    }
+
+    .status-success {
+      background: rgba(40, 167, 69, 0.2);
+      border: 1px solid #28a745;
+      color: #5dd879;
+    }
+
+    .status-error {
+      background: rgba(220, 53, 69, 0.2);
+      border: 1px solid #dc3545;
+      color: #f87171;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      background: #222;
+      border-radius: 4px;
+      height: 8px;
+      margin: 15px 0;
+      overflow: hidden;
+      display: none;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--gold-primary);
+      transition: width 0.3s ease;
+    }
+
+    @media (max-width: 900px) {
+      .about-card { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+      .category-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        MALVO ELÉTRICA
+        <span>ILUMINAÇÃO & AUTOMAÇÃO</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#automacao">Automação</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <button class="admin-lock" onclick="openAdminModal()" title="Painel Administrativo">
+        <i class="fas fa-lock"></i> Painel Admin
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="heroSection">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Henrique Malvo | Especialista em Iluminação</span>
+      <h1>Iluminação que transforma ambientes.</h1>
+      <p>Instalação de iluminação decorativa e automação residencial com foco em alto padrão e fino acabamento na Barra da Tijuca, Recreio, Zona Sul e São Conrado.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/5521990783597?text=Olá,%20Henrique!%20Conheci%20o%20site%20da%20Malvo%20Elétrica%20e%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="btn btn-gold">
+          <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+        </a>
+        <a href="#portfolio" class="btn btn-outline">Explorar Portfólio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="sobre" class="section">
+    <div class="about-card">
+      <div>
+        <span class="hero-badge">10 Anos de Experiência</span>
+        <h3>Experiência, precisão e atenção aos detalhes.</h3>
+      </div>
+      <div class="about-info">
+        <p>Sou Henrique Malvo, profissional de elétrica desde 2016, com atuação voltada para instalações de iluminação residencial, projetos de alto padrão e fino acabamento.</p>
+        <p>Meu trabalho é focado na instalação cuidadosa de luminárias, perfis de LED, spots, arandelas e soluções de automação de iluminação, valorizando a arquitetura e a identidade de cada ambiente.</p>
+        <p>Acredito que uma boa instalação vai além de acender uma luz: cada detalhe de execução e acabamento faz diferença no resultado final.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section">
+    <div class="section-title">
+      <h2>Catálogo e Portfólio</h2>
+      <p>Explore nossas instalações organizadas por categorias exclusivas.</p>
+    </div>
+    <div class="portfolio-vertical" id="portfolioContainer"></div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="servicos" class="section">
+    <div class="section-title">
+      <h2>Serviços Especializados</h2>
+      <p>Precisão técnica e acabamento impecável em cada instalação.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><i class="fas fa-lightbulb"></i><h4>Pendentes e Lustres</h4><p>Fixação técnica segura e alinhamento perfeito para peças de destaque.</p></div>
+      <div class="service-card"><i class="fas fa-grip-lines"></i><h4>Perfis de LED</h4><p>Instalação em gesso, marcenaria e alvenaria com acabamento contínuo e sem sombras.</p></div>
+      <div class="service-card"><i class="fas fa-circle"></i><h4>Spots e Arandelas</h4><p>Foco de luz direcionado para valorizar obras de arte, revestimentos e texturas.</p></div>
+      <div class="service-card"><i class="fas fa-microchip"></i><h4>Automação Residencial</h4><p>Controle inteligente de cenas de luz integrado a assistentes de voz.</p></div>
+    </div>
+  </section>
+
+  <!-- AUTOMATION -->
+  <section id="automacao" class="section">
+    <div class="automation-box" id="automationSectionBox">
+      <div class="automation-overlay"></div>
+      <div class="automation-content">
+        <h2>Mais conforto. Mais praticidade. Mais controle.</h2>
+        <p>
+          Soluções de automação de iluminação que tornam o uso dos ambientes mais prático e confortável, com possibilidades de controle inteligente e integração com Alexa e Google Home.
+        </p>
+        <a href="https://wa.me/5521990783597?text=Olá,%20Henrique!%20Gostaria%20de%20consultar%20opções%20de%20automação%20de%20iluminação." target="_blank" class="btn btn-gold">
+          <i class="fab fa-whatsapp"></i> Consultar Automação pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" class="section">
+    <div class="section-title">
+      <h2>O que dizem nossos clientes</h2>
+      <p>A confiança está nos detalhes, na precisão e no acabamento de cada projeto.</p>
+    </div>
+    <div id="publicTestimonialsContainer"></div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="section" style="text-align: center;">
+    <h2>Conheça mais do meu trabalho</h2>
+    <p style="color: var(--text-muted); margin: 15px 0 30px;">Veja instalações e detalhes de acabamento no meu Instagram profissional.</p>
+    <a href="https://www.instagram.com/malvoeletrica?obrf=MXNkanMyaXMxNmRw" target="_blank" class="btn btn-outline">
+      <i class="fab fa-instagram"></i> Conhecer meu Instagram
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato">
+    <h3 style="color: var(--gold-primary); margin-bottom: 10px;">MALVO ELÉTRICA</h3>
+    <p>Henrique Malvo | Especialista em Iluminação Residencial de Alto Padrão</p>
+    <p style="margin: 15px 0;">Rio de Janeiro — Barra da Tijuca | Recreio | Zona Sul | São Conrado</p>
+    <div style="display: flex; justify-content: center; gap: 15px; margin: 20px 0;">
+      <a href="https://wa.me/5521990783597" target="_blank" class="btn btn-gold"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://www.instagram.com/malvoeletrica?obrf=MXNkanMyaXMxNmRw" target="_blank" class="btn btn-outline"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 20px;">Profissional atuante desde 2016. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightboxImg" src="" alt="Ampliação de Projeto">
+  </div>
+
+  <!-- ADMIN MODAL -->
+  <div class="modal" id="adminModal">
+    <div class="modal-content-admin">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 style="color: var(--gold-primary);"><i class="fas fa-sliders-h"></i> Painel Administrativo Malvo</h3>
+        <span onclick="closeAdminModal()" style="cursor: pointer; font-size: 1.5rem;">&times;</span>
+      </div>
+
+      <div id="loginForm">
+        <div class="form-group">
+          <label>Senha de Acesso</label>
+          <input type="password" id="adminPassword" placeholder="Digite a senha administrativa">
+        </div>
+        <button class="btn btn-gold" style="width: 100%;" onclick="checkPassword()">Acessar Painel</button>
+      </div>
+
+      <div id="adminPanel" style="display: none;">
+        <div class="admin-tabs">
+          <button class="admin-tab active" onclick="switchAdminTab('tabHero')">1. Fundo Principal</button>
+          <button class="admin-tab" onclick="switchAdminTab('tabSectionsBg')">2. Imagens das Seções</button>
+          <button class="admin-tab" onclick="switchAdminTab('tabCatManage')">3. Gerenciar Categorias</button>
+          <button class="admin-tab" onclick="switchAdminTab('tabPhotos')">4. Adicionar Fotos</button>
+          <button class="admin-tab" onclick="switchAdminTab('tabTestimonials')">5. Gerenciar Depoimentos</button>
+        </div>
+
+        <div id="statusMessage" class="status-msg"></div>
+
+        <!-- TAB 1: HERO -->
+        <div id="tabHero" class="admin-section active">
+          <h4 style="color: var(--gold-primary); margin-bottom: 10px;">Imagem de Fundo da Página Inicial</h4>
+          <div class="form-group">
+            <label>Selecione nova imagem</label>
+            <input type="file" id="heroFileInput" accept="image/*" onchange="previewHeroImage(event)">
+          </div>
+          <div class="form-group">
+            <label>Posicionamento</label>
+            <select id="heroPositionSelect" onchange="updateHeroPositionPreview()">
+              <option value="center">Centralizado</option>
+              <option value="top">Topo</option>
+              <option value="bottom">Base</option>
+            </select>
+          </div>
+          <div class="preview-box"><img id="heroPreviewImg" src="" alt="Prévia"></div>
+          <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <button class="btn btn-gold" onclick="saveHeroBackground()"><i class="fas fa-save"></i> Salvar Imagem</button>
+            <button class="btn btn-outline" onclick="restoreDefaultHero()"><i class="fas fa-undo"></i> Restaurar</button>
+          </div>
+        </div>
+
+        <!-- TAB 2: IMAGENS DAS SEÇÕES -->
+        <div id="tabSectionsBg" class="admin-section">
+          <h4 style="color: var(--gold-primary); margin-bottom: 10px;">Imagens das Seções do Site</h4>
+          <div style="background: #000; border: 1px solid var(--border-gold); padding: 20px; border-radius: 6px; margin-bottom: 20px;">
+            <h5 style="color: var(--gold-primary); margin-bottom: 10px;">Imagem de Fundo — Automação Residencial</h5>
+            <div class="form-group">
+              <label>Escolher nova foto da galeria do celular</label>
+              <input type="file" id="automationFileInput" accept="image/*" onchange="previewAutomationImage(event)">
+            </div>
+            <div class="form-group">
+              <label>Pré-visualização</label>
+              <div class="preview-box"><img id="automationPreviewImg" src="" alt="Prévia Automação"></div>
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+              <button class="btn btn-gold btn-sm" onclick="saveAutomationBackground()"><i class="fas fa-save"></i> Salvar Imagem</button>
+              <button class="btn btn-outline btn-sm" onclick="restoreDefaultAutomation()"><i class="fas fa-undo"></i> Restaurar Padrão</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: CATEGORIAS -->
+        <div id="tabCatManage" class="admin-section">
+          <h4 style="color: var(--gold-primary); margin-bottom: 10px;">Categorias</h4>
+          <div style="border: 1px dashed var(--border-gold); padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+            <h5>Criar Nova Categoria</h5>
+            <div class="form-group" style="margin-top: 10px;"><input type="text" id="newCatName" placeholder="Nome da Categoria"></div>
+            <div class="form-group"><input type="text" id="newCatDesc" placeholder="Descrição curta"></div>
+            <button class="btn btn-gold btn-sm" onclick="createNewCategory()"><i class="fas fa-plus"></i> Criar</button>
+          </div>
+          <div id="categoriesAdminList"></div>
+        </div>
+
+        <!-- TAB 4: ADICIONAR FOTOS -->
+        <div id="tabPhotos" class="admin-section">
+          <h4 style="color: var(--gold-primary); margin-bottom: 10px;">Adicionar Fotos ao Catálogo</h4>
+          <div class="form-group">
+            <label>Selecione a Categoria</label>
+            <select id="photoCategorySelect" onchange="renderAdminCategoryPhotos()"></select>
+          </div>
+
+          <div class="form-group">
+            <label>Selecionar Múltiplas Fotos (Galeria do Celular)</label>
+            <input type="file" id="multiplePhotosInput" accept="image/*" multiple onchange="handleFileSelection(event)">
+          </div>
+
+          <div id="uploadPreviewArea" style="display: none; margin-bottom: 20px;">
+            <label style="color: var(--gold-primary); font-size: 0.85rem;">Prévia dos arquivos selecionados:</label>
+            <div class="admin-gallery-preview" id="uploadPreviewGrid"></div>
+            
+            <div class="progress-bar-container" id="uploadProgressBarContainer">
+              <div class="progress-bar-fill" id="uploadProgressBarFill"></div>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+              <button class="btn btn-gold btn-sm" id="confirmUploadBtn" onclick="saveBatchPhotos()">
+                <i class="fas fa-upload"></i> Confirmar Envio e Salvar
+              </button>
+              <button class="btn btn-danger btn-sm" onclick="cancelUploadSelection()">Cancelar</button>
+            </div>
+          </div>
+
+          <hr style="border-color: rgba(255,255,255,0.1); margin: 25px 0;">
+
+          <h5 style="margin-bottom: 10px;">Fotos Atuais na Categoria</h5>
+          <div class="admin-gallery-preview" id="existingPhotosGrid"></div>
+        </div>
+
+        <!-- TAB 5: GERENCIAR DEPOIMENTOS (CORRIGIDO) -->
+        <div id="tabTestimonials" class="admin-section">
+          <h4 style="color: var(--gold-primary); margin-bottom: 15px;">Gerenciar Depoimentos de Clientes</h4>
+          
+          <div style="border: 1px dashed var(--border-gold); padding: 20px; border-radius: 6px; margin-bottom: 25px; background: #000;">
+            <h5 id="testimonialFormTitle" style="margin-bottom: 15px; color: var(--gold-primary);">Adicionar Novo Depoimento</h5>
+            <input type="hidden" id="editTestimonialId" value="">
+            
+            <div class="form-group">
+              <label>Nome do Cliente</label>
+              <input type="text" id="testClientName" placeholder="Ex: Arq. Carlos Eduardo">
+            </div>
+            <div class="form-group">
+              <label>Texto do Depoimento</label>
+              <textarea id="testText" rows="4" placeholder="Digite o comentário do cliente..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Serviço Realizado (Opcional)</label>
+              <input type="text" id="testService" placeholder="Ex: Iluminação de Fachada e Automação">
+            </div>
+            <div class="form-group">
+              <label>Avaliação em Estrelas (1 a 5)</label>
+              <select id="testStars">
+                <option value="5">5 Estrelas</option>
+                <option value="4">4 Estrelas</option>
+                <option value="3">3 Estrelas</option>
+                <option value="2">2 Estrelas</option>
+                <option value="1">1 Estrela</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Foto do Cliente / Autorização (Opcional)</label>
+              <input type="file" id="testAvatarInput" accept="image/*">
+            </div>
+            <div class="form-group">
+              <label>Status de Exibição</label>
+              <select id="testStatus">
+                <option value="published">Publicado (Visível no site)</option>
+                <option value="hidden">Oculto (Invisível no site)</option>
+              </select>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn btn-gold btn-sm" onclick="saveTestimonial()"><i class="fas fa-save"></i> Salvar Alterações</button>
+              <button class="btn btn-outline btn-sm" onclick="resetTestimonialForm()">Cancelar</button>
+            </div>
+          </div>
+
+          <h5 style="margin-bottom: 10px;">Lista de Depoimentos Cadastrados</h5>
+          <div id="adminTestimonialsList"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const DEFAULT_HERO_BG = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80';
+    const DEFAULT_AUTOMATION_BG = 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80';
+    
+    const INITIAL_CATEGORIES = [
+      { id: 'fachadas', title: 'Iluminação de Fachadas', desc: 'Iluminação externa que valoriza a arquitetura e destaca os detalhes.', msg: 'Olá,%20Henrique!%20Tenho%20interesse%20em%20um%20orçamento%20para%20iluminação%20de%20fachada.', photos: ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80'] },
+      { id: 'escadas', title: 'Iluminação de Escadas', desc: 'Iluminação que valoriza linhas arquitetônicas, degraus e detalhes.', msg: 'Olá,%20Henrique!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20iluminação%20de%20escada.', photos: ['https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1000&q=80'] },
+      { id: 'cozinhas', title: 'Iluminação de Cozinhas', desc: 'Iluminação funcional e elegante para valorizar bancadas e marcenaria.', msg: 'Olá,%20Henrique!%20Gostaria%20de%20conversar%20sobre%20a%20instalação%20de%20iluminação%20na%20minha%20cozinha.', photos: ['https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80'] },
+      { id: 'quartos', title: 'Iluminação de Quartos', desc: 'Luz planejada para criar conforto visual e aconchego.', msg: 'Olá,%20Henrique!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20iluminação%20do%20meu%20quarto.', photos: ['https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80'] },
+      { id: 'salas', title: 'Iluminação de Salas', desc: 'Composições de iluminação que destacam a arquitetura e os materiais.', msg: 'Olá,%20Henrique!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20instalação%20de%20iluminação%20na%20minha%20sala.', photos: ['https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80'] }
+    ];
+
+    let catalogData = [];
+    let testimonialsData = [];
+    let pendingFilesData = [];
+    let tempHeroImgData = null;
+    let tempAutomationImgData = null;
+
+    // INDEXEDDB CONFIG
+    function openDatabase() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open('MalvoEletricaDB', 3);
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => resolve(request.result);
+        request.onupgradeneeded = (event) => {
+          const db = event.target.result;
+          if (!db.objectStoreNames.contains('storage')) {
+            db.createObjectStore('storage');
+          }
+        };
+      });
+    }
+
+    async function dbGet(key) {
+      const db = await openDatabase();
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction('storage', 'readonly');
+        const store = transaction.objectStore('storage');
+        const request = store.get(key);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    }
+
+    async function dbSet(key, value) {
+      const db = await openDatabase();
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction('storage', 'readwrite');
+        const store = transaction.objectStore('storage');
+        const request = store.put(value, key);
+        request.onsuccess = () => resolve(true);
+        request.onerror = () => reject(request.error);
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      await loadHeroBackground();
+      await loadAutomationBackground();
+      await loadCatalogData();
+      await loadTestimonialsData();
+      renderSitePortfolio();
+      renderPublicTestimonials();
+    });
+
+    async function loadHeroBackground() {
+      try {
+        const savedHero = await dbGet('malvo_hero_bg') || DEFAULT_HERO_BG;
+        const savedPos = await dbGet('malvo_hero_pos') || 'center';
+        const heroSec = document.getElementById('heroSection');
+        heroSec.style.backgroundImage = `url('${savedHero}')`;
+        heroSec.style.backgroundPosition = savedPos;
+        document.getElementById('heroPreviewImg').src = savedHero;
+        document.getElementById('heroPositionSelect').value = savedPos;
+      } catch (e) {
+        console.error("Erro ao carregar fundo:", e);
+      }
+    }
+
+    async function loadAutomationBackground() {
+      try {
+        const savedAuto = await dbGet('malvo_automation_bg') || DEFAULT_AUTOMATION_BG;
+        const autoSec = document.getElementById('automationSectionBox');
+        autoSec.style.backgroundImage = `url('${savedAuto}')`;
+        document.getElementById('automationPreviewImg').src = savedAuto;
+      } catch (e) {
+        console.error("Erro ao carregar fundo de automação:", e);
+      }
+    }
+
+    function previewHeroImage(event) {
+      const file = event.target.files[0];
+      if (file) {
+        compressSingleImage(file, 1600, 0.85, (url) => {
+          tempHeroImgData = url;
+          document.getElementById('heroPreviewImg').src = url;
+        }, (err) => {
+          showStatus('Erro ao ler a imagem de fundo: ' + err.message, 'error');
+        });
+      }
+    }
+
+    function previewAutomationImage(event) {
+      const file = event.target.files[0];
+      if (file) {
+        compressSingleImage(file, 1400, 0.85, (url) => {
+          tempAutomationImgData = url;
+          document.getElementById('automationPreviewImg').src = url;
+        }, (err) => {
+          showStatus('Erro ao ler a imagem de automação: ' + err.message, 'error');
+        });
+      }
+    }
+
+    function updateHeroPositionPreview() {
+      document.getElementById('heroPreviewImg').style.objectPosition = document.getElementById('heroPositionSelect').value;
+    }
+
+    async function saveHeroBackground() {
+      try {
+        if (tempHeroImgData) await dbSet('malvo_hero_bg', tempHeroImgData);
+        await dbSet('malvo_hero_pos', document.getElementById('heroPositionSelect').value);
+        await loadHeroBackground();
+        showStatus('Fundo principal atualizado com sucesso!', 'success');
+      } catch (err) {
+        showStatus('Erro ao persistir imagem: ' + err.message, 'error');
+      }
+    }
+
+    async function saveAutomationBackground() {
+      try {
+        if (tempAutomationImgData) {
+          await dbSet('malvo_automation_bg', tempAutomationImgData);
+        } else {
+          const current = await dbGet('malvo_automation_bg') || DEFAULT_AUTOMATION_BG;
+          await dbSet('malvo_automation_bg', current);
+        }
+        await loadAutomationBackground();
+        showStatus('Imagem de fundo da Automação Residencial salva com sucesso!', 'success');
+      } catch (err) {
+        showStatus('Erro ao persistir imagem de automação: ' + err.message, 'error');
+      }
+    }
+
+    async function restoreDefaultHero() {
+      try {
+        await dbSet('malvo_hero_bg', DEFAULT_HERO_BG);
+        await dbSet('malvo_hero_pos', 'center');
+        tempHeroImgData = null;
+        await loadHeroBackground();
+        showStatus('Fundo principal restaurado.', 'success');
+      } catch (err) {
+        console.error("Erro ao restaurar fundo:", err);
+      }
+    }
+
+    async function restoreDefaultAutomation() {
+      try {
+        await dbSet('malvo_automation_bg', DEFAULT_AUTOMATION_BG);
+        tempAutomationImgData = null;
+        await loadAutomationBackground();
+        showStatus('Fundo da Automação restaurado para o padrão.', 'success');
+      } catch (err) {
+        console.error("Erro ao restaurar automação:", err);
+      }
+    }
+
+    async function loadCatalogData() {
+      try {
+        const saved = await dbGet('malvo_catalog_db');
+        catalogData = saved ? saved : INITIAL_CATEGORIES;
+      } catch(e) {
+        catalogData = INITIAL_CATEGORIES;
+      }
+    }
+
+    async function saveCatalogDataToStorage() {
+      try {
+        await dbSet('malvo_catalog_db', catalogData);
+        return true;
+      } catch (err) {
+        showStatus('Erro ao salvar no banco de dados local: ' + err.message, 'error');
+        return false;
+      }
+    }
+
+    async function loadTestimonialsData() {
+      try {
+        const saved = await dbGet('malvo_testimonials_db');
+        testimonialsData = saved ? saved : [];
+      } catch(e) {
+        testimonialsData = [];
+      }
+    }
+
+    async function saveTestimonialsDataToStorage() {
+      try {
+        await dbSet('malvo_testimonials_db', testimonialsData);
+        return true;
+      } catch (err) {
+        showStatus('Erro ao salvar depoimentos: ' + err.message, 'error');
+        return false;
+      }
+    }
+
+    // --- RENDERIZAÇÃO DO PORTFÓLIO COM CARROSSÉIS ---
+    function renderSitePortfolio() {
+      const container = document.getElementById('portfolioContainer');
+      container.innerHTML = '';
+
+      catalogData.forEach((cat, index) => {
+        const block = document.createElement('div');
+        block.className = 'category-block';
+
+        let carouselItemsHTML = '';
+        if (cat.photos && cat.photos.length > 0) {
+          cat.photos.forEach(imgUrl => {
+            carouselItemsHTML += `
+              <div class="carousel-item" onclick="openLightbox('${imgUrl}')">
+                <img src="${imgUrl}" alt="${cat.title}">
+                <div class="carousel-item-overlay"><i class="fas fa-search-plus"></i></div>
+              </div>
+            `;
+          });
+        } else {
+          carouselItemsHTML = `<p style="color: var(--text-muted); font-size: 0.85rem; padding: 20px;">Nenhuma foto cadastrada nesta categoria ainda.</p>`;
+        }
+
+        const carouselId = 'carousel-' + cat.id;
+
+        block.innerHTML = `
+          <div class="category-header">
+            <div class="category-header-info">
+              <h3>${index + 1}. ${cat.title}</h3>
+              <p>${cat.desc}</p>
+            </div>
+            <a href="https://wa.me/5521990783597?text=${cat.msg || 'Olá,%20Henrique!'}" target="_blank" class="btn btn-gold btn-sm">
+              <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+            </a>
+          </div>
+          <div class="carousel-wrapper">
+            <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel('${carouselId}', -1)"><i class="fas fa-chevron-left"></i></button>
+            <div class="carousel-container" id="${carouselId}">
+              ${carouselItemsHTML}
+            </div>
+            <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel('${carouselId}', 1)"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        `;
+        container.appendChild(block);
+      });
+    }
+
+    function scrollCarousel(containerId, direction) {
+      const container = document.getElementById(containerId);
+      if (container) {
+        const scrollAmount = 360 * direction;
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    // --- RENDERIZAÇÃO DOS DEPOIMENTOS NO SITE PÚBLICO ---
+    function renderPublicTestimonials() {
+      const container = document.getElementById('publicTestimonialsContainer');
+      const published = testimonialsData.filter(t => t.status === 'published');
+
+      if (published.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 30px; background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: 8px;">
+            <p style="color: var(--text-muted); font-style: italic;">Em breve, novos depoimentos de nossos clientes.</p>
+          </div>
+        `;
+        return;
+      }
+
+      let cardsHTML = '';
+      published.forEach(t => {
+        let starsHTML = '';
+        const count = parseInt(t.stars) || 5;
+        for (let i = 0; i < count; i++) {
+          starsHTML += '<i class="fas fa-star"></i>';
+        }
+
+        const avatarImg = t.avatar ? `<img src="${t.avatar}" class="testimonial-avatar" alt="${t.clientName}">` : `<div class="testimonial-avatar" style="display:flex;align-items:center;justify-content:center;background:#222;color:var(--gold-primary);font-weight:bold;"><i class="fas fa-user"></i></div>`;
+
+        cardsHTML += `
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-header">
+                ${avatarImg}
+                <div>
+                  <h4 style="font-size: 1.1rem; color: var(--text-main);">${t.clientName}</h4>
+                  ${t.service ? `<span style="font-size: 0.75rem; color: var(--gold-primary);">${t.service}</span>` : ''}
+                </div>
+              </div>
+              <div class="testimonial-stars">${starsHTML}</div>
+              <p class="testimonial-text">"${t.text}"</p>
+            </div>
+            ${t.date ? `<span style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 15px;">${t.date}</span>` : ''}
+          </div>
+        `;
+      });
+
+      container.innerHTML = `
+        <div class="testimonials-carousel-wrapper">
+          <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel('publicTestimonialsScroll', -1)"><i class="fas fa-chevron-left"></i></button>
+          <div class="testimonials-container" id="publicTestimonialsScroll">
+            ${cardsHTML}
+          </div>
+          <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel('publicTestimonialsScroll', 1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      `;
+    }
+
+    // --- PAINEL ADMINISTRATIVO DE DEPOIMENTOS (CORRIGIDO) ---
+    function renderAdminTestimonialsList() {
+      const container = document.getElementById('adminTestimonialsList');
+      container.innerHTML = '';
+
+      if (testimonialsData.length === 0) {
+        container.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem;">Nenhum depoimento cadastrado.</p>';
+        return;
+      }
+
+      testimonialsData.forEach((t) => {
+        const div = document.createElement('div');
+        div.style.cssText = 'background:#000; border:1px solid rgba(255,255,255,0.1); padding:15px; border-radius:6px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;';
+        
+        const statusBadge = t.status === 'published' 
+          ? '<span style="color:#5dd879; font-size:0.75rem; border:1px solid #28a745; padding:2px 6px; border-radius:3px;">Publicado</span>' 
+          : '<span style="color:#f87171; font-size:0.75rem; border:1px solid #dc3545; padding:2px 6px; border-radius:3px;">Oculto</span>';
+
+        div.innerHTML = `
+          <div style="max-width: 600px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:5px;">
+              <strong style="color:var(--gold-primary); font-size:1rem;">${t.clientName}</strong>
+              ${statusBadge}
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:5px;">"${t.text}"</p>
+            <span style="font-size:0.75rem; color:var(--text-muted);">${t.service || ''}</span>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <button class="btn btn-outline btn-sm" onclick="editTestimonial('${t.id}')"><i class="fas fa-edit"></i> Editar</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteTestimonial('${t.id}')"><i class="fas fa-trash"></i></button>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    async function saveTestimonial() {
+      const editId = document.getElementById('editTestimonialId').value.trim();
+      const clientName = document.getElementById('testClientName').value.trim();
+      const text = document.getElementById('testText').value.trim();
+      const service = document.getElementById('testService').value.trim();
+      const stars = document.getElementById('testStars').value;
+      const status = document.getElementById('testStatus').value;
+      const avatarInput = document.getElementById('testAvatarInput');
+
+      if (!clientName || !text) {
+        showStatus('Preencha pelo menos o nome do cliente e o texto do depoimento.', 'error');
+        return;
+      }
+
+      const processAndSave = async (avatarUrl) => {
+        if (editId !== '') {
+          // FLUXO DE EDIÇÃO CORRIGIDO: Localiza estritamente pelo ID e atualiza sem duplicar
+          const index = testimonialsData.findIndex(item => item.id === editId);
+          if (index !== -1) {
+            testimonialsData[index].clientName = clientName;
+            testimonialsData[index].text = text;
+            testimonialsData[index].service = service;
+            testimonialsData[index].stars = stars;
+            testimonialsData[index].status = status;
+            if (avatarUrl) {
+              testimonialsData[index].avatar = avatarUrl;
+            }
+            showStatus('Depoimento atualizado com sucesso!', 'success');
+          } else {
+            showStatus('Erro: Depoimento não encontrado para edição.', 'error');
+            return;
+          }
+        } else {
+          // FLUXO DE CRIAÇÃO
+          const newTestimonial = {
+            id: 'test-' + Date.now(),
+            clientName,
+            text,
+            service,
+            stars,
+            status,
+            avatar: avatarUrl || '',
+            date: new Date().toLocaleDateString('pt-BR')
+          };
+          testimonialsData.push(newTestimonial);
+          showStatus('Depoimento adicionado com sucesso!', 'success');
+        }
+
+        await saveTestimonialsDataToStorage();
+        renderAdminTestimonialsList();
+        renderPublicTestimonials();
+        resetTestimonialForm();
+      };
+
+      if (avatarInput.files && avatarInput.files[0]) {
+        compressSingleImage(avatarInput.files[0], 300, 0.8, (compressedUrl) => {
+          processAndSave(compressedUrl);
+        }, (err) => {
+          showStatus('Erro ao processar foto do cliente: ' + err.message, 'error');
+        });
+      } else {
+        let existingAvatar = '';
+        if (editId !== '') {
+          const found = testimonialsData.find(i => i.id === editId);
+          if (found) existingAvatar = found.avatar;
+        }
+        processAndSave(existingAvatar);
+      }
+    }
+
+    function editTestimonial(id) {
+      const t = testimonialsData.find(item => item.id === id);
+      if (!t) {
+        showStatus('Depoimento não localizado para edição.', 'error');
+        return;
+      }
+
+      // Preenche os campos do formulário com os dados existentes
+      document.getElementById('editTestimonialId').value = t.id;
+      document.getElementById('testClientName').value = t.clientName || '';
+      document.getElementById('testText').value = t.text || '';
+      document.getElementById('testService').value = t.service || '';
+      document.getElementById('testStars').value = t.stars || '5';
+      document.getElementById('testStatus').value = t.status || 'published';
+      document.getElementById('testimonialFormTitle').innerText = 'Editar Depoimento';
+      
+      const tab = document.getElementById('tabTestimonials');
+      if (tab) tab.scrollTop = 0;
+    }
+
+    function resetTestimonialForm() {
+      document.getElementById('editTestimonialId').value = '';
+      document.getElementById('testClientName').value = '';
+      document.getElementById('testText').value = '';
+      document.getElementById('testService').value = '';
+      document.getElementById('testStars').value = '5';
+      document.getElementById('testStatus').value = 'published';
+      document.getElementById('testAvatarInput').value = '';
+      document.getElementById('testimonialFormTitle').innerText = 'Adicionar Novo Depoimento';
+    }
+
+    async function deleteTestimonial(id) {
+      if (confirm('Tem certeza que deseja remover este depoimento?')) {
+        testimonialsData = testimonialsData.filter(item => item.id !== id);
+        await saveTestimonialsDataToStorage();
+        renderAdminTestimonialsList();
+        renderPublicTestimonials();
+        showStatus('Depoimento removido com sucesso.', 'success');
+      }
+    }
+
+    // --- CONTROLES GERAIS DO ADMIN ---
+    function openAdminModal() { document.getElementById('adminModal').style.display = 'flex'; }
+    function closeAdminModal() { document.getElementById('adminModal').style.display = 'none'; }
+
+    function checkPassword() {
+      if (document.getElementById('adminPassword').value === 'malvo2026') {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('adminPanel').style.display = 'block';
+        populateCategorySelects();
+        renderAdminCategoriesList();
+        renderAdminCategoryPhotos();
+        renderAdminTestimonialsList();
+      } else {
+        alert('Senha incorreta!');
+      }
+    }
+
+    function switchAdminTab(tabId) {
+      document.querySelectorAll('.admin-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    function showStatus(msg, type) {
+      const el = document.getElementById('statusMessage');
+      el.className = 'status-msg status-' + type;
+      el.innerText = msg;
+      el.style.display = 'block';
+      setTimeout(() => { el.style.display = 'none'; }, 6000);
+    }
+
+    function populateCategorySelects() {
+      const sel = document.getElementById('photoCategorySelect');
+      const currentVal = sel.value;
+      sel.innerHTML = '';
+      catalogData.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat.id;
+        opt.innerText = cat.title;
+        sel.appendChild(opt);
+      });
+      if (currentVal) sel.value = currentVal;
+    }
+
+    function renderAdminCategoriesList() {
+      const container = document.getElementById('categoriesAdminList');
+      container.innerHTML = '';
+      catalogData.forEach(cat => {
+        const div = document.createElement('div');
+        div.style.cssText = 'background:#000; border:1px solid rgba(255,255,255,0.1); padding:12px; border-radius:4px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center; gap:10px;';
+        div.innerHTML = `
+          <div><strong style="color:var(--gold-primary);">${cat.title}</strong><p style="font-size:0.8rem; color:var(--text-muted);">${cat.desc}</p></div>
+          <button class="btn btn-danger btn-sm" onclick="deleteCategory('${cat.id}')"><i class="fas fa-trash"></i></button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    async function createNewCategory() {
+      const name = document.getElementById('newCatName').value.trim();
+      const desc = document.getElementById('newCatDesc').value.trim();
+      if (!name) { showStatus('Informe o nome.', 'error'); return; }
+      catalogData.push({ id: 'cat-' + Date.now(), title: name, desc: desc || 'Projetos exclusivos.', msg: `Olá,%20Henrique!%20Orçamento%20para%20${encodeURIComponent(name)}.`, photos: [] });
+      
+      const success = await saveCatalogDataToStorage();
+      if (success) {
+        renderSitePortfolio(); renderAdminCategoriesList(); populateCategorySelects();
+        document.getElementById('newCatName').value = '';
+        document.getElementById('newCatDesc').value = '';
+        showStatus('Categoria criada com sucesso!', 'success');
+      }
+    }
+
+    async function deleteCategory(id) {
+      if (confirm('Excluir esta categoria?')) {
+        catalogData = catalogData.filter(c => c.id !== id);
+        const success = await saveCatalogDataToStorage();
+        if (success) {
+          renderSitePortfolio(); renderAdminCategoriesList(); populateCategorySelects(); renderAdminCategoryPhotos();
+          showStatus('Categoria excluída.', 'success');
+        }
+      }
+    }
+
+    function handleFileSelection(event) {
+      const files = Array.from(event.target.files);
+      const previewGrid = document.getElementById('uploadPreviewGrid');
+      const previewArea = document.getElementById('uploadPreviewArea');
+      previewGrid.innerHTML = '';
+      pendingFilesData = [];
+
+      if (files.length === 0) {
+        previewArea.style.display = 'none';
+        return;
+      }
+
+      let processedCount = 0;
+      files.forEach((file) => {
+        if (!file.type.startsWith('image/')) {
+          showStatus('Apenas arquivos de imagem são permitidos.', 'error');
+          return;
+        }
+
+        compressSingleImage(file, 1200, 0.8, (compressedUrl) => {
+          pendingFilesData.push(compressedUrl);
+
+          const card = document.createElement('div');
+          card.className = 'admin-gallery-card';
+          card.innerHTML = `<img src="${compressedUrl}">`;
+          previewGrid.appendChild(card);
+
+          processedCount++;
+          if (processedCount === files.length) {
+            previewArea.style.display = 'block';
+          }
+        }, (err) => {
+          showStatus('Falha ao processar imagem: ' + err.message, 'error');
+        });
+      });
+    }
+
+    async function saveBatchPhotos() {
+      if (pendingFilesData.length === 0) {
+        showStatus('Nenhuma imagem válida selecionada.', 'error');
+        return;
+      }
+
+      const catId = document.getElementById('photoCategorySelect').value;
+      const cat = catalogData.find(c => c.id === catId);
+      if (!cat) { showStatus('Categoria não encontrada.', 'error'); return; }
+
+      const barContainer = document.getElementById('uploadProgressBarContainer');
+      const barFill = document.getElementById('uploadProgressBarFill');
+      const confirmBtn = document.getElementById('confirmUploadBtn');
+
+      barContainer.style.display = 'block';
+      confirmBtn.disabled = true;
+      barFill.style.width = '30%';
+
+      try {
+        barFill.style.width = '70%';
+        if (!cat.photos) cat.photos = [];
+        cat.photos.push(...pendingFilesData);
+
+        const savedSuccessfully = await saveCatalogDataToStorage();
+
+        if (savedSuccessfully) {
+          barFill.style.width = '100%';
+          renderSitePortfolio();
+          renderAdminCategoryPhotos();
+          
+          pendingFilesData = [];
+          document.getElementById('multiplePhotosInput').value = '';
+          document.getElementById('uploadPreviewArea').style.display = 'none';
+          barContainer.style.display = 'none';
+          barFill.style.width = '0%';
+          confirmBtn.disabled = false;
+
+          showStatus('Fotos enviadas e salvas com sucesso no banco de dados local!', 'success');
+        } else {
+          throw new Error("Falha ao gravar no IndexedDB.");
+        }
+      } catch (err) {
+        barContainer.style.display = 'none';
+        confirmBtn.disabled = false;
+        showStatus('Erro ao salvar as fotos: ' + err.message, 'error');
+      }
+    }
+
+    function cancelUploadSelection() {
+      pendingFilesData = [];
+      document.getElementById('multiplePhotosInput').value = '';
+      document.getElementById('uploadPreviewArea').style.display = 'none';
+      document.getElementById('uploadProgressBarContainer').style.display = 'none';
+      showStatus('Envio cancelado.', 'error');
+    }
+
+    function renderAdminCategoryPhotos() {
+      const catId = document.getElementById('photoCategorySelect').value;
+      const cat = catalogData.find(c => c.id === catId);
+      const grid = document.getElementById('existingPhotosGrid');
+      grid.innerHTML = '';
+
+      if (!cat || !cat.photos || cat.photos.length === 0) {
+        grid.innerHTML = '<p style="color:var(--text-muted); font-size:0.8rem;">Nenhuma foto nesta categoria.</p>';
+        return;
+      }
+
+      cat.photos.forEach((photoUrl, pIdx) => {
+        const card = document.createElement('div');
+        card.className = 'admin-gallery-card';
+        card.innerHTML = `
+          <img src="${photoUrl}">
+          <div class="admin-gallery-card-controls">
+            <button class="btn btn-danger btn-sm" onclick="removeSinglePhoto('${catId}', ${pIdx})"><i class="fas fa-trash"></i></button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    async function removeSinglePhoto(catId, photoIndex) {
+      const cat = catalogData.find(c => c.id === catId);
+      if (cat && cat.photos) {
+        cat.photos.splice(photoIndex, 1);
+        const success = await saveCatalogDataToStorage();
+        if (success) {
+          renderSitePortfolio();
+          renderAdminCategoryPhotos();
+          showStatus('Foto removida com sucesso.', 'success');
+        }
+      }
+    }
+
+    function compressSingleImage(file, maxWidth, quality, onSuccess, onError) {
+      const reader = new FileReader();
+      reader.onerror = () => onError(new Error("Erro de leitura do arquivo"));
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onerror = () => onError(new Error("Erro ao carregar imagem"));
+        img.onload = function() {
+          try {
+            const canvas = document.createElement('canvas');
+            let width = img.width;
+            let height = img.height;
+            if (width > maxWidth) {
+              height = Math.round((height * maxWidth) / width);
+              width = maxWidth;
+            }
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+            onSuccess(canvas.toDataURL('image/jpeg', quality));
+          } catch (err) {
+            onError(err);
+          }
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function openLightbox(url) {
+      document.getElementById('lightboxImg').src = url;
+      document.getElementById('lightboxModal').style.display = 'flex';
+    }
+    function closeLightbox() { document.getElementById('lightboxModal').style.display = 'none'; }
+  </script>
+</body>
+</html>
